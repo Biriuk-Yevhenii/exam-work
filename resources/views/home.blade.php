@@ -1,13 +1,75 @@
 @extends('layouts.app')
 
 @section('homeContent')
-    <div class="home-main" style="text-align: center">
+    {{-- <div class="home-main" style="text-align: center">
         <img class="home-main-img" src="image/handsome-sucessful-buisnessman-is-posing-for-photographer-on-the-dark-background.jpg" alt="">
         <div class="home-main-text-on-image">
             Elevate your professional style with our business attire
         </div>
+    </div> --}}
+    <div class="home-main" style="text-align: center; position: relative; background-image: url('image/handsome-sucessful-buisnessman-is-posing-for-photographer-on-the-dark-background.jpg');
+    background-size: cover; background-position: center;">
+        <div class="home-main-overlay"></div>
+        <div class="home-main-text-on-image position-absolute bottom-0 start-0 end-0">
+            Elevate your professional style with our business attire
+        </div>
     </div>
 
+    <style>
+        .home-main {
+        position: relative;
+        height: 80vh;
+        overflow: hidden;
+        text-align: center;
+        }
+
+        .home-main img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        object-position: 0 -120px;
+        opacity: 0.8;
+        z-index: 1;
+        }
+
+        .home-main-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+        }
+
+        .home-main-text-on-image {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        font-size: 200%;
+        font-family: Lato;
+        color: #E3E3E3;
+        font-weight: 900;
+        z-index: 3;
+        }
+
+        @media (min-width: 1160px) {
+        .home-main {
+            background-position-y: -130px !important;
+        }
+        }
+
+        .p-home-page {
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 20px;
+        color: #D4D4D4;
+        }
+    </style>
 
     <div class="container">
         <p style="font-size:18px" class="p-3 p-home-page">Welcome to our business attire store, where professionalism meets style. Discover our collection of elegant and sophisticated clothing that will elevate your work wardrobe. From tailored suits to sleek dresses, we've got you covered for any occasion. Let us help you make a lasting impression with our high-quality pieces that exude confidence and class. Shop now and elevate your business look to the next level!</p>

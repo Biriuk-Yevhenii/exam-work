@@ -136,6 +136,9 @@
             <div class="container py-4">
                 @yield('content')
             </div> 
+        </main>
+        
+        <footer>
             <div class="container" style="margin-top: -20px">
                 <div style="width: 90%; margin-left: 5%">
                     <hr style="border: 1px solid;">
@@ -150,58 +153,58 @@
                     </div>
                 </div>
             </div>
-        </main>
-        
-        <footer style="background: #D2D2D2;">
-            <div class="container py-3">
-                <h2 style="color: black"><strong>Otomow</strong></h2>
-                <div class="row justify-content-between footer-main">
-                    <div class="col-md-2 a py-2">
-                        <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">Links</h3>
-                        <a href="/catalogs">Catalog</a><br>
-                        <a href="">About US</a><br>
-                        <a href="">Support</a><br>
-                        <a href="/contacts">Contacts</a><br>
-                    </div>
-                    <div class="col-md-3 py-2">
-                        <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">Contacts</h3>
-                        <a href="mailto:biriuk.yevhenii@gmz31.com"><strong>Mail: </strong>biriuk.yevhenii@gmz31.com</a><br>
-                        <a href="tel:+48536286013"><strong>Phone number: </strong>+48 536 286 013 <br></a>
-                        <a href="#"><strong>Address:</strong> Adama Bienia 16, Poland</a>
-                    </div>
-                    <div class="col-md-4 py-2">
-                        <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">About Us</h3>
-                        <div>Our store is the best place to buy business clothing. We offer a wide range of suits, shirts, pants, jackets, and more.</div>
-                        <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
-                            <a href="#"><img src="image/icons/icon-facebook.svg" alt=""></a>
-                            <a href="#"><img src="image/icons/icon-twitter.svg" alt=""></a>
-                            <a href="#"><img src="image/icons/icon-instagram.svg" alt=""></a>
-                            <a href="#"><img src="image/icons/icon-pinterest.svg" alt=""></a>
-                            <a href="#"><img src="image/icons/icon-youtube.svg" alt=""></a>
+            <div  style="background: #D2D2D2;">
+                <div class="container py-3">
+                    <h2 style="color: black"><strong>Otomow</strong></h2>
+                    <div class="row justify-content-between footer-main">
+                        <div class="col-md-2 a py-2">
+                            <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">Links</h3>
+                            <a href="/catalogs">Catalog</a><br>
+                            <a href="">About US</a><br>
+                            <a href="">Support</a><br>
+                            <a href="/contacts">Contacts</a><br>
+                        </div>
+                        <div class="col-md-3 py-2">
+                            <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">Contacts</h3>
+                            <a href="mailto:biriuk.yevhenii@gmz31.com"><strong>Mail: </strong>biriuk.yevhenii@gmz31.com</a><br>
+                            <a href="tel:+48536286013"><strong>Phone number: </strong>+48 536 286 013 <br></a>
+                            <a href="#"><strong>Address:</strong> Adama Bienia 16, Poland</a>
+                        </div>
+                        <div class="col-md-4 py-2">
+                            <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">About Us</h3>
+                            <div>Our store is the best place to buy business clothing. We offer a wide range of suits, shirts, pants, jackets, and more.</div>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0">
+                                <a href="#"><img src="image/icons/icon-facebook.svg" alt=""></a>
+                                <a href="#"><img src="image/icons/icon-twitter.svg" alt=""></a>
+                                <a href="#"><img src="image/icons/icon-instagram.svg" alt=""></a>
+                                <a href="#"><img src="image/icons/icon-pinterest.svg" alt=""></a>
+                                <a href="#"><img src="image/icons/icon-youtube.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 py-2">
+                            <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">Subscribe to news</h3>
+                            <small style="color: black !important;">Be the first to know about promotions and news</small>
+                            <form id="mailingForm" action="/mailingAddToDb" method="POST">
+                                @csrf
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="email" name="email">
+                                    <button type="submit" class="btn btn-outline-dark">Subscribe</button>
+                                </div>
+                            </form>                        
+    
                         </div>
                     </div>
-                    <div class="col-md-3 py-2">
-                        <h3 style="margin: 0; padding: 0; font-weight: 500; padding-bottom: 5px">Subscribe to news</h3>
-                        <small style="color: black !important;">Be the first to know about promotions and news</small>
-                        <form id="mailingForm" action="/mailingAddToDb" method="POST">
-                            @csrf
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control" placeholder="email" name="email">
-                                <button type="submit" class="btn btn-outline-dark">Subscribe</button>
-                            </div>
-                        </form>                        
-
-                    </div>
+                </div>
+                <div class="p-2" style="text-align: center; color:#FFFFFF; background:#1A1A1A">
+                    © 2023 All rights reserved
                 </div>
             </div>
-            <div class="p-2" style="text-align: center; color:#FFFFFF; background:#1A1A1A">
-                © 2023 All rights reserved
-            </div>
+            
         </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Подключаем библиотеку jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

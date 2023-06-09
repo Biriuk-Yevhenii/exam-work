@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Cart</h1>
     <div class="contact-body my-4" >
         <div class="content" >
             <form action="https://www.liqpay.ua/api/3/checkout" method="POST">

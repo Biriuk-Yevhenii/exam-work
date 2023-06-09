@@ -45,6 +45,12 @@ img
 
 // -------------------------------
 
+@media (min-width: 1100px) {
+    .home-main {
+        background-position-y: -130px !important;
+    }
+}
+
 .home-main
 {
     position: relative;
@@ -841,8 +847,3 @@ button input[type="button"]:hover{
  
 // Mailing ---------------------
 
-.im{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
