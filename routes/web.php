@@ -58,10 +58,6 @@ Route::post('liqpay/callback', [LiqPay::class, 'liqpayCallback'])->name('liqpayC
 Route::post('carts/quantity', [CartController::class, 'quantity']);
 Route::post('carts/update', [ControllersCatalogController::class, 'cartUpdates']);
 
-//History ----------------------
-Route::any('history', [CartController::class, 'history']); //history buy
-
-
 Route::resource('comments', ControllersCommentController::class);
 Route::resource('categories', CategoryController::class);
 /* Route::resource('catalogs', CatalogController::class); */
@@ -69,6 +65,9 @@ Route::resource('categories', CategoryController::class);
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('carts', CartController::class);
+
+    //History ----------------------
+    Route::any('history', [CartController::class, 'history']); //history buy
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

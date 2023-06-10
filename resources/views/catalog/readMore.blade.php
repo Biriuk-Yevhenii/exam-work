@@ -36,7 +36,7 @@
                     <a href="/cart/{{$catalog->id}}" class="btn btn-light add-to-card" data-id='{{$catalog->id}}'>
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
-                    <a class="btn btn-light ms-3 byu-it-now">
+                    <a href="/carts" class="btn btn-light ms-3 byu-it-now">
                         <b>Buy It Now</b>
                     </a>
                 </div>

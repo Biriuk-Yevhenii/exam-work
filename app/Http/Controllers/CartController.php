@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactEmail;
+use App\Models\Bi;
 use App\Models\Buy;
 use App\Models\Cart;
 use App\Models\Catalog;
@@ -59,7 +60,7 @@ class CartController extends Controller
     {
         $user_id = Auth::user()->id;
         $prod = Cart::where('product_id', $id)->where('user_id', $user_id)->get();
-        if($prod)
+        if($prod->count() > 0)
         {
             $prod[0]->quantity++;
             $prod[0]->save(); // Сохраняем данные в таблицу "carts"
@@ -147,8 +148,19 @@ class CartController extends Controller
     {
         $buy_id = [];
         $order_id = uniqid();
+        $bi_id = [];
         for($i = 1; $i <= $request->iterations; ++$i)
         {
+            $carts = Cart::where('id',$request->input("prod$i"))->get();
+            foreach($carts as $cart)
+            {
+                $bi = new Bi();
+                $bi->user_id = $cart->user_id;
+                $bi->product_id = $cart->product_id;
+                $bi->quantity = $cart->quantity;
+                $bi->save();
+            }
+            
             $buy = new Buy();
             $buy->country = $request->country;
             $buy->sity = $request->sity;
@@ -158,14 +170,14 @@ class CartController extends Controller
             $buy->sec_name = $request->sec_name;
             $buy->tel = $request->tel;
             $buy->email = $request->email;
-            $buy->cart_id = $request->input("prod$i");
+            $buy->bi_id = $bi->id;
             $buy->payment = $request->payment;
             $buy->user_id = $request->user_id;
             $buy->order_id = $order_id;
             $buy->save();
             $buy_id[] = $buy->id;
-        }        
-
+            echo $buy;
+        }       
         $user_id = Auth::user()->id;
         $carts = Cart::with('product')->where('user_id', $user_id)->get();
 
@@ -217,7 +229,7 @@ class CartController extends Controller
 
     public function history()
     {
-        $user = User::with('buys.cart.product')->find(Auth::user()->id);
+        $user = User::with('buys.bi.product')->find(Auth::user()->id);
         return view('cart.history', compact('user'));
     }
 

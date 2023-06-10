@@ -163,7 +163,9 @@
         </table>
     </div>
 
-    <button id="buyButton" style="text-align: center" class="btn btn-light" data-toggle="modal" data-target="#checkoutModal">Buy</button>
+    <button id="buyButton" style="text-align: center" class="btn btn-light" data-toggle="modal" data-target="#checkoutModal" @if ($totalPrice <=0)
+        disabled
+    @endif>Buy</button>
 
     <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document" style="min-height: 100vh; display: flex; align-items: center;">

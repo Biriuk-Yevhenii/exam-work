@@ -1,5 +1,5 @@
-<div class="container border rounded" style="border-radius:30px; background: #535353; padding:10px; width: 70%; left: 50%; transform: translateX(-50%);">
-    <table style="color: white; width: 100%; table-layout: fixed;">
+<div class="container border rounded" style="border-radius:30px; background: #535353; padding:10px; width: 70%;">
+    <table style="color: white; width: 100%; table-layout: fixed; margin: auto;">
         <thead>
             <tr>
                 <th></th>
@@ -21,7 +21,7 @@
                         @endphp
                         @if (isset($item))
                             <td style="border: 1px solid white; border-radius: 10px; text-align:center; font-size: 16px; width: calc(50% - 20px); margin: 10px; padding: 15px;">
-                                <img src="https://kasta.ua/image/1035/s3/6/66/1a6/11146662/32783843/32783843_original.jpeg" alt="Product Image" style="width: 40%; margin: 10px; border-radius: 10px;">
+                                <img src="https://kasta.ua/image/1035/s3/6/66/1a6/11146662/32783843/32783843_original.jpeg" alt="Product Image" style="width: 100%; margin: 10px; border-radius: 10px;">
                                 <div>{{$item->title}}</div>
                                 <div>{{$item->price}} $</div>
                                 <div style="margin-top: 20px;">

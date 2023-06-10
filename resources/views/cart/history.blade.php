@@ -32,7 +32,7 @@
             @endforeach
         </tbody>
     </table>  --}}
-    <div class="table-responsive ">
+    <div class="table-responsive">
         <table class="table table-striped" style="color: #ffffff;">
             <thead>
                 <tr>
@@ -50,11 +50,11 @@
                 @foreach ($user->buys as $buy)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td><img style="width: 100px" src="{{ $buy->cart->product->image }}" alt="{{ $buy->cart->product->title }}"></td>
-                    <td>{{ $buy->cart->product->title }}</td>
-                    <td>{{ $buy->cart->quantity }}</td>
-                    <td>{{ $buy->cart->product->price }}$</td>
-                    <td>{{ $buy->cart->product->price * $buy->cart->quantity }}$</td>
+                    <td><img style="width: 100px" src="{{ $buy->bi->product->image }}" alt="{{ $buy->bi->product->title }}"></td>
+                    <td>{{ $buy->bi->product->title }}</td>
+                    <td>{{ $buy->bi->quantity }}</td>
+                    <td>{{ $buy->bi->product->price }}$</td>
+                    <td>{{ $buy->bi->product->price * $buy->bi->quantity }}$</td>
                     <td>{{ $buy->payment ? 'Paid' : 'Unpaid' }}</td>
                     <td></td>
                 </tr>
